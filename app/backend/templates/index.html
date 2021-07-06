@@ -1,0 +1,8 @@
+{% extends "./layout.html" %}
+{% block content %}
+  {% if flask_env ==  'development' %}
+    <script type="text/javascript" src="http://0.0.0.0:3035/bundle.js"></script>
+  {% else %}
+    <script type=text/javascript src="{{ url_for('static', filename='bundle.js') }}"></script>
+  {% endif %}
+{% endblock %}
